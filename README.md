@@ -2,8 +2,8 @@
 
 **Author**: Kat L., University of California, Los Angeles (UCLA)
 
-![aurify homepage](static/img/aurify-homepage.png)
-![aurify profile](static/img/aurify-profile.png)
+![Aurify Homepage](static/img/aurify-homepage.png)
+![Aurify Profile](static/img/aurify-profile.png)
 
 ## Introduction 
 
