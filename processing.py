@@ -1,6 +1,5 @@
 import statistics
 import spotipy
-from PIL import Image, ImageDraw
 
 def getTrackIDs(token):
     """
