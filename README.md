@@ -5,11 +5,11 @@
 ![Aurify Homepage](static/img/aurify-homepage.png)
 ![Aurify Profile](static/img/aurify-profile.png)
 
-## Introduction 
+## ✦ Introduction 
 
-Aurify is a web application that creates personalized music “Aura” visualizations based on your Spotify listening habits. The creation of Aurify was heavily inspired by Spotify’s 2021 Wrapped. :) 
+Aurify is a web application that creates personalized “Aura” visualizations based on your Spotify listening habits. The creation of Aurify was heavily inspired by Spotify’s 2021 Wrapped. :^) 
 
-## Description 
+## ✦ Description 
 
 Aurify leverages real-time integration with Spotify to analyze your top tracks, identifying key musical attributes, and ultimately translating them into an “Aura.” An Aura contains two main elements: an outer color and core color. 
 
@@ -19,7 +19,7 @@ The outer color of your Aura is inspired by Scrabbin’s Circle of Fifths, a con
 ### Core Color 
 The core color is derived from the circumplex model of affect. This color represents the valence-arousal aspects of your music – basically, it's all about the emotions and energy your music embodies. The core color changes based on whether your music is more energetic or calming, and whether it carries a more positive or somber tone.
 
-## Running Locally 
+## ✦ Running Locally 
 
 The following below are key steps to set up and run Aurify on your local machine.
 
@@ -96,12 +96,12 @@ The following below are key steps to set up and run Aurify on your local machine
    - Open your web browser and go to [http://localhost:5000](http://localhost:5000) to view the app.
 
 
-## Repository Structure 
+## ✦ Repository Structure 
 
 An overview of the main files and directories in the Aurify:
 
 ```bash
-Aurify/
+aurify/
 ├── LICENSE               # The license file.
 ├── README.md             # The README file with project information.
 ├── app.py                # The main Python file to run the Flask application.
