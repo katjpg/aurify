@@ -17,7 +17,7 @@ Aurify leverages real-time integration with Spotify to analyze your top tracks, 
 The outer color of your Aura is inspired by Scrabbin’s Circle of Fifths, a concept in music theory. This color reflects the most common musical key in your favorite songs, offering a glimpse into the mood and tone of your preferred music.
 
 ### Core Color 
-The core color is derived from the circumplex model of affect. This color represents the valence-arousal aspects of your music – basically, it's all about the emotions and energy your music embodies. The core color changes based on whether your music is more energetic or calming, and whether it carries a more positive or somber tone.
+The core color is derived from the Circumplex Model of Affect. This color represents the valence-arousal aspects of your music – basically, it's all about the emotions and energy your music embodies. The core color changes based on whether your music is more energetic or calming, and whether it carries a more positive or somber tone.
 
 ## ✦ Running Locally 
 
