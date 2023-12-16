@@ -186,4 +186,4 @@ def profile():
         return redirect(url_for('login', _external=True))
 
 if __name__ == '__main__':
-    app.run(debug=False) 
+    app.run(debug=False) # for deployment, set debug=False
