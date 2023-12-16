@@ -1,0 +1,24 @@
+# virtual Environment
+aurify-venv/
+
+# python bytecode
+__pycache__/
+*.pyc
+
+# node modules
+node_modules/
+
+# OS Files
+.DS_Store
+
+# editor configurations
+.vscode/
+
+# dependency Lock Files 
+package-lock.json
+
+# environment variables
+.env
+
+# cache directories
+.cache/

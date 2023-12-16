@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✦aurify</title>
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+    <section class="bg-gradient-to-t from-purple-500 to-60% via-violet-600 to-indigo-900">
+        <header class="mb-2 px-4">
+            <div class="relative mx-auto flex max-w-screen-lg flex-col py-4 sm:flex-row sm:items-center sm:justify-between">
+              <div class="flex items-center text-2xl text-white font-semibold">
+                <a class="mr-2 text-white" href="/">✦aurify</a>
+            </div>
+
+              <input class="peer hidden" type="checkbox" id="navbar-open" />
+              <label class="absolute right-0 mt-1 cursor-pointer text-xl sm:hidden" for="navbar-open">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 448 512">
+              <path fill="white" d="M0 96c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm448 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32z" />
+            </svg>
+          </label>
+          
+              <nav aria-label="Header Navigation" class="hidden py-6 pl-2 peer-checked:block sm:block sm:py-0">
+                <ul class="flex flex-col gap-y-4 sm:flex-row sm:gap-x-8">
+                  <li class=""><a class="text-neutral-300 hover:text-white" href="/">Home</a></li>
+                  <li class=""><a class="text-neutral-300 hover:text-white" href="/about">About</a></li>
+                  <li class=""><a class="text-neutral-300 hover:text-white" href="/privacy">Privacy</a></li>
+                  <li class=""><a class="text-neutral-300 hover:text-white" href="/contact">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </header>
+          
+
+
+          <div class="max-w-5xl px-6 py-36 mx-auto fade-in">
+            <h2 class="text-3xl font-medium text-white">Privacy Policy</h2>
+            <div class="grid gap-8 mt-10 md:mt-10 md:grid-cols-2 mb-32">
+                <div class="flex space-x-4">
+                    <div>
+                        <h4 class="text-xl font-medium text-white">✦ Information Collection and Use</h4>
+                        <p class="max-w-lg mt-4 text-neutral-300">
+                            Your privacy is our priority. We access your public Spotify profile and top tracks data to create unique, personalized visualizations. 
+                            This data is processed in real-time and not stored, ensuring your privacy is upheld. 
+                            Our goal is to provide an enhanced experience by responsibly handling your information.
+                        </p>
+                    </div>
+                </div>
+        
+                <div class="flex space-x-4">
+                    <div>
+                        <h4 class="text-xl font-medium text-white">✦ Revoking Permissions</h4>
+                        <p class="max-w-lg mt-4 text-neutral-300">
+                            To revoke Aurify's access to your Spotify data, 
+                            simply visit your 
+                            <a href="https://www.spotify.com/account/apps/" target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-blue-500">Spotify account's apps page</a>. 
+                            Locate Aurify and click "REMOVE ACCESS." This action will immediately cease all access we have to your Spotify data. For any assistance or concerns, please don't hesitate to contact us.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+
+    </section>
+
+    
+    
+    <footer class="relative bg-gray-900 px-4 pt-10">
+        <nav aria-label="Footer Navigation" class="mx-auto mb-10 flex max-w-lg flex-col items-center gap-10 text-center sm:flex-row sm:justify-center">
+            <a href="/about" class="font-medium text-neutral-300 hover:text-white">About</a>
+            <a href="/privacy" class="font-medium text-neutral-300 hover:text-white">Privacy</a>
+            <a href="/contact" class="font-medium text-neutral-300 hover:text-white">Contact</a>
+        </nav>
+        <p class="py-10 text-center text-gray-300">Made by Kat | © 2023 ✦aurify </p>
+    </footer>
+</body>

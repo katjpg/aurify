@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✦aurify</title>
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    
+</head>
+<body class="min-h-screen bg-gradient-to-t from-amber-200 to-60% via-violet-600 to-indigo-900">
+    <header class="mb-2 px-4">
+        <div class="relative mx-auto flex max-w-screen-lg flex-col py-4 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex items-center text-2xl text-white font-semibold">
+            <a class="mr-2 text-white" href="/">✦aurify</a>
+        </div>
+
+          <input class="peer hidden" type="checkbox" id="navbar-open" />
+          <label class="absolute right-0 mt-1 cursor-pointer text-xl sm:hidden" for="navbar-open">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 448 512">
+          <path fill="white" d="M0 96c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm448 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32z" />
+        </svg>
+      </label>
+      
+          <nav aria-label="Header Navigation" class="hidden py-6 pl-2 peer-checked:block sm:block sm:py-0">
+            <ul class="flex flex-col gap-y-4 sm:flex-row sm:gap-x-8">
+              <li class=""><a class="text-neutral-300 hover:text-white" href="/">Home</a></li>
+              <li class=""><a class="text-neutral-300 hover:text-white" href="/about">About</a></li>
+              <li class=""><a class="text-neutral-300 hover:text-white" href="/privacy">Privacy</a></li>
+              <li class=""><a class="text-neutral-300 hover:text-white" href="/contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+    </header>
+
+      
+
+    <div id="capture-area" class="flex flex-col items-center justify-center min-h-screen py-40 bg-gradient-to-t from-amber-200 to-60% via-violet-600 to-indigo-900">
+        <div class="text-3xl font-semibold text-gray-200 mb-8 fade-in">
+            <h1>Your Spotify Aura</h1>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in">
+            <div class="bg-white font-semibold text-center rounded-3xl border shadow-lg p-7 max-w-xs relative">
+                
+                <!-- Aura image -->
+                <img class="relative z-10 pb-9" src="{{ aura_image_url }}" alt="User Aura" style="max-width: 100%;">
+                
+                <h1 class="text-lg text-gray-500 relative z-10 pb-14">
+                    <span style="color: {{ plot_color_rgba }};">{{ key_adj }}</span>
+                    <span class="font-medium">and</span>
+                    <span style="color: {{ ev_rgb_color }};">{{ valence_adj }}</span>
+                </h1>
+            </div>
+          
+            <div class="bg-white font-semibold text-center rounded-3xl border shadow-lg p-7 max-w-xs relative">
+                <h3 class="text-sm text-gray-400 relative">YOUR STATS</h3>
+                <canvas id="radarChart"></canvas>
+    
+                <p class="text-sm text-gray-400">Energy: <span style="color: {{ plot_color_rgba }};">{{ feature_stars['Energy'] }}</span></p>
+                <p class="text-sm text-gray-400">Positivity: <span style="color: {{ plot_color_rgba }};">{{ feature_stars['Positivity'] }}</span></p>
+                <p class="text-sm text-gray-400">Grooviness: <span style="color: {{ plot_color_rgba }};">{{ feature_stars['Grooviness'] }}</span></p>
+                <p class="text-sm text-gray-400">Naturalness: <span style="color: {{ plot_color_rgba }};">{{ feature_stars['Naturalness'] }}</span></p>
+                <p class="text-sm text-gray-400">Intensity: <span style="color: {{ plot_color_rgba }};">{{ feature_stars['Intensity'] }}</span></p>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <footer class="relative bg-gray-900 px-4 pt-10">
+        <nav aria-label="Footer Navigation" class="mx-auto mb-10 flex max-w-lg flex-col items-center gap-10 text-center sm:flex-row sm:justify-center">
+            <a href="/about" class="font-medium text-neutral-300 hover:text-white">About</a>
+            <a href="/privacy" class="font-medium text-neutral-300 hover:text-white">Privacy</a>
+            <a href="/contact" class="font-medium text-neutral-300 hover:text-white">Contact</a>
+        </nav>
+        <p class="py-10 text-center text-gray-300">Made by Kat | © 2023 ✦aurify </p>
+    </footer>
+</body>
+
+
+
+<script>
+    
+    const radarChartData = {{ radar_data | tojson | safe }};
+    const plotColorRGBA = "{{ plot_color_rgba }}";
+    const labelOrder = ['Energy', 'Positivity', 'Grooviness', 'Naturalness', 'Intensity'];
+    const orderedValues = labelOrder.map(label => radarChartData[label]);
+
+    const radarChart = new Chart(document.getElementById('radarChart'), {
+        type: 'radar',
+        data: {
+            labels: labelOrder,
+            datasets: [{
+                data: orderedValues,
+                fill: true,
+                backgroundColor: plotColorRGBA.replace(', 1)', ', 0.2)'),
+                borderColor: plotColorRGBA,
+                pointBackgroundColor: plotColorRGBA,
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: plotColorRGBA
+            }]
+        },
+        options: {
+            responsive: true, 
+            maintainAspectRatio: true, 
+            plugins: {
+                legend: {
+                    display: false
+                },
+            },
+            scales: {
+                r: {
+                    angleLines: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 100,
+                    ticks: {
+                        stepSize: 20
+                    }
+                }
+            },
+            elements: {
+                line: {
+                    borderWidth: 3
+                },
+                point: {
+                    radius: 3
+                }
+            }
+        }
+    });
+
+
+</script>
+
+ </html>

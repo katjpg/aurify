@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✦aurify</title>
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <section class="bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-amber-200 to-80% via-violet-600 to-blue-900">
+
+        <header class="mb-2 px-4">
+            <div class="relative mx-auto flex max-w-screen-lg flex-col py-4 sm:flex-row sm:items-center sm:justify-between">
+              <div class="flex items-center text-2xl text-white font-semibold">
+                <a class="mr-2 text-white" href="/">✦aurify</a>
+            </div>
+              <!-- Make this animated; change -->
+              <input class="peer hidden" type="checkbox" id="navbar-open" />
+              <label class="absolute right-0 mt-1 cursor-pointer text-xl sm:hidden" for="navbar-open">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 448 512">
+              <path fill="white" d="M0 96c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm448 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32z" />
+            </svg>
+          </label>
+          
+              <nav aria-label="Header Navigation" class="hidden py-6 pl-2 peer-checked:block sm:block sm:py-0">
+                <ul class="flex flex-col gap-y-4 sm:flex-row sm:gap-x-8">
+                  <li class=""><a class="text-neutral-300 hover:text-white" href="/">Home</a></li>
+                  <li class=""><a class="text-neutral-300 hover:text-white" href="/about">About</a></li>
+                  <li class=""><a class="text-neutral-300 hover:text-white" href="/privacy">Privacy</a></li>
+                  <li class=""><a class="text-neutral-300 hover:text-white" href="/contact">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </header>
+        
+        <!-- Hero Section -->
+          <section class="flex min-h-screen items-center justify-center py-24 fade-in">
+            <div class="mx-auto max-w-[43rem]">
+              <div class="text-center">
+                <h1 class="mt-2 text-5xl font-semibold leading-[4rem] tracking-tight text-white">What's your Spotify Aura?</h1>
+              </div>
+        
+              <div class="mt-7 flex items-center justify-center gap-3">
+                <button class="rounded-3xl bg-indigo-600 px-8 py-2 font-semibold uppercase tracking-wide text-gray-100 transition ease-in-out delay-140 hover:-translate-y-1 hover:scale-100 hover:bg-indigo-500 duration-300" onclick="location.href='/login';">Login with Spotify</button>
+              </div>
+            </div>
+          </section>
+        </section>
+    </section>
+
+    <section class="py-24 md:py-16 bg-gradient-to-t from-violet-600 to-indigo-900">
+
+      <div class="container max-w-screen-lg mx-auto px-6">
+
+          <div class="flex flex-col lg:flex-row justify-between">
+              <div class="mb-10 lg:mb-0">
+                  <h1 class="font-medium text-white text-3xl md:text-4xl mb-5">How it Works</h1>
+              </div>
+
+              <div class="space-y-24">
+                  <div class="flex space-x-6">
+                      <h1 class="font-normal text-white text-3xl md:text-4xl">✦1</h1>
+
+                      <span class="w-28 h-0.5 bg-violet-400 mt-5"></span>
+
+                      <div>
+                          <h1 class="font-normal text-white text-3xl md:text-4xl mb-5">Connect with Your Spotify</h1>
+
+                          <p class="font-normal text-neutral-300 text-sm md:text-base">
+                            Log in using your Spotify account. <br>
+                            Don't worry, we keep your login details secure and <br>
+                            only use this information to personalize your experience on our site.
+                          
+                          </p>
+                      </div>
+                  </div>
+                  
+                  <div class="flex space-x-6">
+                      <h1 class="font-normal text-white text-3xl md:text-4xl">✦2</h1>
+
+                      <span class="w-28 h-0.5 bg-violet-400 mt-5"></span>
+
+                      <div>
+                          <h1 class="font-normal text-white text-3xl md:text-4xl mb-5">Personalized Music Analysis</h1>
+
+                          <p class="font-normal text-neutral-300 text-sm md:text-base">
+                            Once you're logged in, our app dives into your Spotify music listening habits.
+                          </p>
+                      </div>
+                  </div>
+                  
+                  <div class="flex space-x-6">
+                      <h1 class="font-normal text-white text-3xl md:text-4xl">✦3</h1>
+
+                      <span class="w-28 h-0.5 bg-violet-400 mt-5"></span>
+
+                      <div>
+                          <h1 class="font-normal text-white text-3xl md:text-4xl mb-5">Visualize Your Music Aura</h1>
+
+                          <p class="font-normal text-neutral-300 text-sm md:text-base">
+                            Finally, we turn your music preferences into a personalized Spotify music Aura. <br>
+                            You can view this in your profile, share it with friends, <br>
+                            and even discover new insights about your musical preferences.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+  </section>
+
+  <footer class="relative bg-gray-900 px-4 pt-10">
+    <nav aria-label="Footer Navigation" class="mx-auto mb-10 flex max-w-lg flex-col items-center gap-10 text-center sm:flex-row sm:justify-center">
+        <a href="/about" class="font-medium text-neutral-300 hover:text-white">About</a>
+        <a href="/privacy" class="font-medium text-neutral-300 hover:text-white">Privacy</a>
+        <a href="/contact" class="font-medium text-neutral-300 hover:text-white">Contact</a>
+    </nav>
+    <p class="py-10 text-center text-gray-300">Made by Kat | © 2023 ✦aurify </p>
+</footer>
+
+        
+</body>
+</html> 
