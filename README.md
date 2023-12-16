@@ -98,7 +98,7 @@ The following below are key steps to set up and run Aurify on your local machine
 
 ## ✦ Repository Structure 
 
-An overview of the main files and directories in the Aurify:
+An overview of the main files and directories in Aurify:
 
 ```bash
 aurify/
