@@ -32,7 +32,7 @@ The following below are key steps to set up and run Aurify on your local machine
 
 1. **Clone the Repository**: Clone Aurify to your local machine using:
    ```bash
-   git clone https://github.com/your-username/aurify.git
+   git clone https://github.com/katjpg/aurify.git
    cd aurify
    ```
 
